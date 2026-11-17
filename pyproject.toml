@@ -9,7 +9,7 @@ description = "Bioclimatic indices and reproducible reports for high-altitude vi
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Yilong Xiao", email = "uppercrusteve@users.noreply.github.com" }]
+authors = [{ name = "uppercrusteve", email = "uppercrusteve@users.noreply.github.com" }]
 keywords = [
     "viticulture",
     "bioclimatic-indices",

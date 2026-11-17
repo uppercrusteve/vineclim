@@ -164,7 +164,7 @@ ruff check .
 
 ```bibtex
 @software{xiao_vineclim_2026,
-  author  = {Xiao, Yilong},
+  author  = {uppercrusteve},
   title   = {vineclim: bioclimatic indices and reproducible reports for high-altitude vineyards},
   year    = {2026},
   version = {0.1.0},
@@ -194,4 +194,4 @@ only, and the tool computes no radiation, humidity or water-balance terms.
 
 ## License
 
-[MIT](LICENSE) © 2026 Yilong Xiao
+[MIT](LICENSE) © 2026 uppercrusteve

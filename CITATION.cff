@@ -9,8 +9,7 @@ license: MIT
 repository-code: "https://github.com/uppercrusteve/vineclim"
 url: "https://github.com/uppercrusteve/vineclim"
 authors:
-  - family-names: Xiao
-    given-names: Yilong
+  - name: "uppercrusteve"
     email: uppercrusteve@users.noreply.github.com
 abstract: >-
   vineclim computes growing degree days (GDD10), the Huglin heliothermal
