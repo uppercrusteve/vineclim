@@ -1,0 +1,18 @@
+{
+  "api_version": "v2.10.3",
+  "sources": [
+    "MERRA2",
+    "POWER"
+  ],
+  "fill_value": -999.0,
+  "grid_elevation_m": 3879.61,
+  "start": "20150101",
+  "end": "20251231",
+  "n_days": 4018,
+  "retrieved": "2026-11-17",
+  "input_json": "F:\\云南vibe\\_research\\power_deqin.json",
+  "grid_longitude": 98.86,
+  "grid_latitude": 28.55,
+  "warning": "NASA POWER grid values are not vineyard measurements.",
+  "generated_at": "2026-11-17T01:30:42+08:00"
+}
