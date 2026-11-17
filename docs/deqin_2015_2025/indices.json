@@ -1,0 +1,1405 @@
+{
+  "tool": "vineclim",
+  "version": "0.1.0",
+  "generated_at": "2026-11-17T02:00:34+08:00",
+  "input": {
+    "file": "deqin_power_2015_2025.csv",
+    "rows": 4018,
+    "coverage": {
+      "start": "2015-01-01",
+      "end": "2025-12-31"
+    }
+  },
+  "site": {
+    "name": "德钦",
+    "latitude": 28.55,
+    "longitude": 98.86,
+    "hemisphere": "north",
+    "huglin_k": 1.0
+  },
+  "data_source": {
+    "type": "power-grid",
+    "label": "NASA POWER 网格日值（网格产品，非园地实测）",
+    "note": "NASA POWER 0.5°×0.625° 网格；检索日期 2026-11-17；格点海拔 3879.61 m，园地海拔 2200 m 为示意值",
+    "power_is_not_measured": true
+  },
+  "elevation_correction": {
+    "enabled": true,
+    "station_elev_m": 2200.0,
+    "grid_elev_m": 3879.61,
+    "lapse_c_per_km": 6.5,
+    "offset_c": 10.917,
+    "illustrative": true
+  },
+  "missing_threshold": 0.2,
+  "metric_definitions": {
+    "gdd10": {
+      "label_zh": "生长度日 GDD10",
+      "label_en": "Growing degree days (base 10 °C)",
+      "unit": "°C·d",
+      "description_zh": "年内 Σ max(0, Tmean − 10)，非生长季日贡献为 0，等价于生长季累计。"
+    },
+    "huglin_hi": {
+      "label_zh": "Huglin 热指数 HI",
+      "label_en": "Huglin heliothermal index",
+      "unit": "°C·d",
+      "description_zh": "北半球 4–9 月、南半球 10–3 月，Σ max(0, ((Tmean−10)+(Tmax−10))/2) × k。"
+    },
+    "cold_night_index": {
+      "label_zh": "冷夜指数 CI",
+      "label_en": "Cool night index",
+      "unit": "°C",
+      "description_zh": "北半球 9 月、南半球 3 月的平均 Tmin（成熟期夜温）。"
+    },
+    "frost_days": {
+      "label_zh": "全年霜冻日",
+      "label_en": "Frost days",
+      "unit": "d",
+      "description_zh": "全年 Tmin < 0 °C 的天数。"
+    },
+    "spring_frost_days": {
+      "label_zh": "春霜日",
+      "label_en": "Spring frost days",
+      "unit": "d",
+      "description_zh": "北半球 4–5 月、南半球 9–11 月 Tmin < 0 °C 的天数。"
+    },
+    "autumn_frost_days": {
+      "label_zh": "秋霜日",
+      "label_en": "Autumn frost days",
+      "unit": "d",
+      "description_zh": "北半球 10 月、南半球 4–5 月 Tmin < 0 °C 的天数。"
+    },
+    "hot_days_35c": {
+      "label_zh": "高温日",
+      "label_en": "Hot days (Tmax > 35 °C)",
+      "unit": "d",
+      "description_zh": "全年 Tmax > 35 °C 的天数。"
+    },
+    "growing_season_length": {
+      "label_zh": "生长季长度",
+      "label_en": "Growing-season length",
+      "unit": "d",
+      "description_zh": "全年 Tmean ≥ 10 °C 的累计天数（非连续计数）。"
+    },
+    "diurnal_range_gs": {
+      "label_zh": "生长季昼夜温差",
+      "label_en": "Growing-season diurnal range",
+      "unit": "°C",
+      "description_zh": "Tmean ≥ 10 °C 的日内 Tmax − Tmin 的平均值。"
+    }
+  },
+  "years": [
+    {
+      "year": 2015,
+      "indices": {
+        "gdd10": {
+          "value": 197.91,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2356.957,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 575.5075,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2454.3661,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 5.585,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 16.5025,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 207.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 17.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 35.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 21.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 106.0,
+          "n_days": 106,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 301.0,
+          "n_days_corrected": 301,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 11.6032,
+          "n_days": 106,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 11.6751,
+          "n_days_corrected": 301,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2016,
+      "indices": {
+        "gdd10": {
+          "value": 147.965,
+          "n_days": 366,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2329.7192,
+          "n_days_corrected": 366,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 423.1525,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2270.8111,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 4.691,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 15.6085,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 195.0,
+          "n_days": 366,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 6.0,
+          "n_days_corrected": 366,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 30.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 14.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 366,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 366,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 81.0,
+          "n_days": 81,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 310.0,
+          "n_days_corrected": 310,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 10.0288,
+          "n_days": 81,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 10.8344,
+          "n_days_corrected": 310,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2017,
+      "indices": {
+        "gdd10": {
+          "value": 160.505,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2375.1117,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 486.13,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2376.1086,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 5.9277,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 16.8451,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 191.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 6.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 30.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 10.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 107.0,
+          "n_days": 107,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 309.0,
+          "n_days_corrected": 309,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 9.9913,
+          "n_days": 107,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 11.023,
+          "n_days_corrected": 309,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2018,
+      "indices": {
+        "gdd10": {
+          "value": 220.145,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2293.9093,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 567.3225,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2479.2236,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 5.7667,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 16.6841,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 207.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 7.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 33.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 23.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 112.0,
+          "n_days": 112,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 306.0,
+          "n_days_corrected": 306,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 10.6731,
+          "n_days": 112,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 11.3133,
+          "n_days_corrected": 306,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2019,
+      "indices": {
+        "gdd10": {
+          "value": 272.54,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2453.6453,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 641.59,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2558.9361,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 4.6157,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 15.5331,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 185.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 18.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 21.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 13.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 105.0,
+          "n_days": 105,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 276.0,
+          "n_days_corrected": 276,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 11.2288,
+          "n_days": 105,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 11.4913,
+          "n_days_corrected": 276,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2020,
+      "indices": {
+        "gdd10": {
+          "value": 226.01,
+          "n_days": 366,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2371.2147,
+          "n_days_corrected": 366,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 539.69,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2384.0086,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 6.442,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 17.3595,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 186.0,
+          "n_days": 366,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 12.0,
+          "n_days_corrected": 366,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 34.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 3.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 366,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 366,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 117.0,
+          "n_days": 117,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 294.0,
+          "n_days_corrected": 294,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 9.9472,
+          "n_days": 117,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 10.7803,
+          "n_days_corrected": 294,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2021,
+      "indices": {
+        "gdd10": {
+          "value": 286.505,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2586.4991,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 662.2475,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2592.9886,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 4.56,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 15.4775,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 190.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 31.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 8.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 126.0,
+          "n_days": 126,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 312.0,
+          "n_days_corrected": 312,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 10.9693,
+          "n_days": 126,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 12.0076,
+          "n_days_corrected": 312,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2022,
+      "indices": {
+        "gdd10": {
+          "value": 255.635,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2468.2472,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 575.41,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2425.6886,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 5.475,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 16.3925,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 192.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 22.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 30.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 11.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 113.0,
+          "n_days": 113,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 295.0,
+          "n_days_corrected": 295,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 10.5578,
+          "n_days": 113,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 11.4348,
+          "n_days_corrected": 295,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2023,
+      "indices": {
+        "gdd10": {
+          "value": 300.8,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2487.8215,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 681.1925,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2591.3661,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 5.9497,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 16.8671,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 212.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 4.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 43.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 18.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 125.0,
+          "n_days": 125,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 313.0,
+          "n_days_corrected": 313,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 11.6253,
+          "n_days": 125,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 12.1038,
+          "n_days_corrected": 313,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2024,
+      "indices": {
+        "gdd10": {
+          "value": 281.77,
+          "n_days": 366,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2445.3472,
+          "n_days_corrected": 366,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 625.92,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2509.2561,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 6.3613,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 17.2788,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 191.0,
+          "n_days": 366,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 7.0,
+          "n_days_corrected": 366,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 33.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 9.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 366,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 366,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 123.0,
+          "n_days": 123,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 295.0,
+          "n_days_corrected": 295,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 10.2096,
+          "n_days": 123,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 10.9601,
+          "n_days_corrected": 295,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    },
+    {
+      "year": 2025,
+      "indices": {
+        "gdd10": {
+          "value": 245.37,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2553.8037,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "huglin_hi": {
+          "value": 596.9475,
+          "n_days": 183,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2512.7011,
+          "n_days_corrected": 183,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "cold_night_index": {
+          "value": 5.9103,
+          "n_days": 30,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 16.8278,
+          "n_days_corrected": 30,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "frost_days": {
+          "value": 179.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 2.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "spring_frost_days": {
+          "value": 25.0,
+          "n_days": 61,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 61,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "autumn_frost_days": {
+          "value": 8.0,
+          "n_days": 31,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 31,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "hot_days_35c": {
+          "value": 0.0,
+          "n_days": 365,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 0.0,
+          "n_days_corrected": 365,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "growing_season_length": {
+          "value": 111.0,
+          "n_days": 111,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 322.0,
+          "n_days_corrected": 322,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        },
+        "diurnal_range_gs": {
+          "value": 10.4486,
+          "n_days": 111,
+          "n_missing": 0,
+          "missing_fraction": 0.0,
+          "status": "ok",
+          "value_corrected": 11.223,
+          "n_days_corrected": 322,
+          "n_missing_corrected": 0,
+          "missing_fraction_corrected": 0.0,
+          "status_corrected": "ok"
+        }
+      }
+    }
+  ],
+  "climatology": {
+    "gdd10": {
+      "mean": 235.92,
+      "mean_corrected": 2429.3,
+      "n_years_used": 11,
+      "n_years_insufficient": 0,
+      "classification": "冷凉（很短的成熟窗口）"
+    },
+    "huglin_hi": {
+      "mean": 579.56,
+      "mean_corrected": 2468.68,
+      "n_years_used": 11,
+      "n_years_insufficient": 0,
+      "classification": "过冷（too cold）"
+    },
+    "cold_night_index": {
+      "mean": 5.57,
+      "mean_corrected": 16.49,
+      "n_years_used": 11,
+      "n_years_insufficient": 0,
+      "classification": "夜很冷（very cool nights）"
+    },
+    "frost_days": {
+      "mean": 194.09,
+      "mean_corrected": 9.36,
+      "n_years_used": 11,
+      "n_years_insufficient": 0,
+      "classification": "霜冻风险较高"
+    },
+    "spring_frost_days": {
+      "mean": 31.36,
+      "mean_corrected": 0.0,
+      "n_years_used": 11,
+      "n_years_insufficient": 0,
+      "classification": null
+    },
+    "autumn_frost_days": {
+      "mean": 12.55,
+      "mean_corrected": 0.0,
+      "n_years_used": 11,
+      "n_years_insufficient": 0,
+      "classification": null
+    },
+    "hot_days_35c": {
+      "mean": 0.0,
+      "mean_corrected": 0.0,
+      "n_years_used": 11,
+      "n_years_insufficient": 0,
+      "classification": "几乎无高温胁迫"
+    },
+    "growing_season_length": {
+      "mean": 111.45,
+      "mean_corrected": 303.0,
+      "n_years_used": 11,
+      "n_years_insufficient": 0,
+      "classification": "生长季短"
+    },
+    "diurnal_range_gs": {
+      "mean": 10.66,
+      "mean_corrected": 11.35,
+      "n_years_used": 11,
+      "n_years_insufficient": 0,
+      "classification": "昼夜温差中等"
+    }
+  },
+  "disclaimers": [
+    "POWER 网格值不是园地实测",
+    "海拔订正是示意"
+  ]
+}

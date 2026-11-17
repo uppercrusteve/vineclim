@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use vineclim in academic work, please cite it as below."
+type: software
+title: "vineclim: bioclimatic indices and reproducible reports for high-altitude vineyards"
+version: 0.1.0
+date-released: "2026-11-17"
+year: 2026
+license: MIT
+repository-code: "https://github.com/YilongXiao/vineclim"
+url: "https://github.com/YilongXiao/vineclim"
+authors:
+  - family-names: Xiao
+    given-names: Yilong
+    email: YilongXiao@users.noreply.github.com
+abstract: >-
+  vineclim computes growing degree days (GDD10), the Huglin heliothermal
+  index, cool night index, frost days, hot days, growing-season length and
+  growing-season diurnal range from daily minimum and maximum temperature.
+  It reads station CSV files or NASA POWER grid downloads, flags years with
+  more than 20 percent missing data as insufficient_data, and writes JSON,
+  CSV, a Markdown report and figures. Elevation correction by a constant
+  lapse rate is optional and always reported next to uncorrected values.
+keywords:
+  - viticulture
+  - bioclimatic indices
+  - growing degree days
+  - huglin index
+  - frost
+  - high-altitude vineyards
+  - nasa power
+  - reproducible research
