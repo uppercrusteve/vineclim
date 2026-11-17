@@ -6,12 +6,12 @@ version: 0.1.0
 date-released: "2026-11-17"
 year: 2026
 license: MIT
-repository-code: "https://github.com/YilongXiao/vineclim"
-url: "https://github.com/YilongXiao/vineclim"
+repository-code: "https://github.com/uppercrusteve/vineclim"
+url: "https://github.com/uppercrusteve/vineclim"
 authors:
   - family-names: Xiao
     given-names: Yilong
-    email: YilongXiao@users.noreply.github.com
+    email: uppercrusteve@users.noreply.github.com
 abstract: >-
   vineclim computes growing degree days (GDD10), the Huglin heliothermal
   index, cool night index, frost days, hot days, growing-season length and

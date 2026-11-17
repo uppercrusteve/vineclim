@@ -135,7 +135,7 @@ def fetch_power(
                 POWER_URL,
                 params=params,
                 timeout=timeout,
-                headers={"User-Agent": "vineclim/0.1.0 (+https://github.com/YilongXiao/vineclim)"},
+                headers={"User-Agent": "vineclim/0.1.0 (+https://github.com/uppercrusteve/vineclim)"},
             )
             response.raise_for_status()
             payload = response.json()

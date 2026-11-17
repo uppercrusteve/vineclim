@@ -2,7 +2,7 @@
 
 高海拔葡萄园的气候指标计算与可复现报告：GDD、Huglin、冷夜、霜冻、高温、生长季长度与昼夜温差。
 
-[![CI](https://img.shields.io/github/actions/workflow/status/YilongXiao/vineclim/ci.yml?branch=main&label=CI)](https://github.com/YilongXiao/vineclim/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/uppercrusteve/vineclim/ci.yml?branch=main&label=CI)](https://github.com/uppercrusteve/vineclim/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue)](pyproject.toml)
 
@@ -169,7 +169,7 @@ ruff check .
   year    = {2026},
   version = {0.1.0},
   license = {MIT},
-  url     = {https://github.com/YilongXiao/vineclim}
+  url     = {https://github.com/uppercrusteve/vineclim}
 }
 ```
 

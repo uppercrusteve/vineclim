@@ -9,7 +9,7 @@ description = "Bioclimatic indices and reproducible reports for high-altitude vi
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Yilong Xiao", email = "YilongXiao@users.noreply.github.com" }]
+authors = [{ name = "Yilong Xiao", email = "uppercrusteve@users.noreply.github.com" }]
 keywords = [
     "viticulture",
     "bioclimatic-indices",
@@ -38,7 +38,7 @@ dev = ["pytest>=7", "ruff>=0.6"]
 vineclim = "vineclim.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/YilongXiao/vineclim"
+Homepage = "https://github.com/uppercrusteve/vineclim"
 
 [tool.setuptools.packages.find]
 where = ["src"]

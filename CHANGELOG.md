@@ -31,4 +31,4 @@ and the project uses [Semantic Versioning](https://semver.org/).
 - Test suite covering indices, input validation, POWER parsing/reporting and
   CLI behaviour; GitHub Actions CI for Linux and Windows on Python 3.11/3.12.
 
-[0.1.0]: https://github.com/YilongXiao/vineclim/releases/tag/v0.1.0
+[0.1.0]: https://github.com/uppercrusteve/vineclim/releases/tag/v0.1.0
