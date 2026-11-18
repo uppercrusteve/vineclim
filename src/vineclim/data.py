@@ -31,11 +31,15 @@ def load_csv(path: str | Path) -> pd.DataFrame:
         raise DataError(f"输入文件不存在: {path}")
 
     try:
-        frame = pd.read_csv(path, dtype={"date": "string"})
+        frame = pd.read_csv(path, dtype={"date": "string"}, encoding="utf-8-sig")
     except pd.errors.EmptyDataError as exc:
         raise DataError(f"输入文件为空: {path}") from exc
     except (OSError, pd.errors.ParserError) as exc:
         raise DataError(f"无法读取 CSV: {exc}") from exc
+    except UnicodeDecodeError as exc:
+        raise DataError(
+            "输入不是 UTF-8；请另存为 UTF-8（Excel：另存为 → CSV UTF-8）"
+        ) from exc
 
     missing_columns = [column for column in REQUIRED_COLUMNS if column not in frame.columns]
     if missing_columns:
@@ -81,8 +85,17 @@ def load_csv(path: str | Path) -> pd.DataFrame:
 
 
 def available_years(frame: pd.DataFrame) -> list[int]:
-    """Return sorted years present in the data."""
-    return sorted(frame["date"].dt.year.unique().tolist())
+    """Return every year between the first and last date, gaps included.
+
+    A year with no rows at all must still be evaluated: otherwise a record
+    broken in the middle silently disappears from the output instead of being
+    flagged as ``insufficient_data``.
+    """
+    if frame.empty:
+        return []
+    first = int(frame["date"].min().year)
+    last = int(frame["date"].max().year)
+    return list(range(first, last + 1))
 
 
 def coverage(frame: pd.DataFrame) -> tuple[str, str]:

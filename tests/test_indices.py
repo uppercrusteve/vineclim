@@ -22,8 +22,9 @@ def test_gdd_hand_computed(three_day_rows):
     gdd = entry(result, 2024, "gdd10")
     assert gdd["value"] == pytest.approx(9.0)
     assert gdd["n_days"] == 3
-    assert gdd["n_missing"] == 0
-    assert gdd["status"] == "ok"
+    # Only three days are present, so the rest of the calendar year counts as missing.
+    assert gdd["n_missing"] == 363
+    assert gdd["status"] == "insufficient_data"
 
 
 def test_huglin_hand_computed_with_k(three_day_rows):
@@ -59,28 +60,53 @@ def test_leap_day_is_included():
     assert gdd["value"] == pytest.approx(10.0)
 
 
+def _full_year(year: int, skip_days: int = 0):
+    dates = list(pd.date_range(f"{year}-01-01", f"{year}-12-31", freq="D"))
+    rows = [(d.strftime("%Y-%m-%d"), 10.0, 20.0, 0.0) for d in dates]
+    for index in range(skip_days):
+        day = rows[index][0]
+        rows[index] = (day, None, None, 0.0)
+    return rows
+
+
 def test_missing_values_are_skipped_and_counted():
-    rows = [(f"2024-01-{day:02d}", 10.0, 20.0, 0.0) for day in range(1, 11)]
-    for day in (2, 5, 9):
-        rows[day - 1] = (f"2024-01-{day:02d}", None, None, 0.0)
+    rows = _full_year(2023, skip_days=3)
+    result = compute(rows, latitude=45.0)
+    gdd = entry(result, 2023, "gdd10")
+    assert gdd["n_days"] == 362
+    assert gdd["n_missing"] == 3
+    assert gdd["missing_fraction"] == pytest.approx(3 / 365, abs=1e-4)
+    assert gdd["status"] == "ok"
+    assert gdd["value"] == pytest.approx(1810.0)
+
+
+def test_missing_month_still_counts_against_the_calendar_window():
+    dates = [d for d in pd.date_range("2024-01-01", "2024-12-31", freq="D") if d.month != 4]
+    rows = [(d.strftime("%Y-%m-%d"), 10.0, 20.0, 0.0) for d in dates]
     result = compute(rows, latitude=45.0)
     gdd = entry(result, 2024, "gdd10")
-    assert gdd["n_days"] == 7
-    assert gdd["n_missing"] == 3
-    assert gdd["missing_fraction"] == pytest.approx(0.3)
+    assert gdd["n_missing"] == 30
+    assert gdd["missing_fraction"] == pytest.approx(30 / 366, abs=1e-4)
+    # April alone is 8 % of the year, below the 20 % threshold.
+    assert gdd["status"] == "ok"
+
+
+def test_absent_months_mark_the_year_insufficient():
+    dates = [d for d in pd.date_range("2024-01-01", "2024-12-31", freq="D") if d.month not in (4, 5, 6)]
+    rows = [(d.strftime("%Y-%m-%d"), 10.0, 20.0, 0.0) for d in dates]
+    result = compute(rows, latitude=45.0)
+    gdd = entry(result, 2024, "gdd10")
+    assert gdd["n_missing"] == 91
     assert gdd["status"] == "insufficient_data"
-    assert gdd["value"] == pytest.approx(35.0)
 
 
 def test_exactly_twenty_percent_is_not_insufficient():
-    rows = [(f"2024-01-{day:02d}", 10.0, 20.0, 0.0) for day in range(1, 11)]
-    for day in (3, 7):
-        rows[day - 1] = (f"2024-01-{day:02d}", None, None, 0.0)
+    rows = _full_year(2023, skip_days=73)
     result = compute(rows, latitude=45.0)
-    gdd = entry(result, 2024, "gdd10")
+    gdd = entry(result, 2023, "gdd10")
     assert gdd["missing_fraction"] == pytest.approx(0.2)
     assert gdd["status"] == "ok"
-    assert gdd["value"] == pytest.approx(40.0)
+    assert gdd["value"] == pytest.approx(1460.0)
 
 
 def test_southern_hemisphere_huglin_uses_october_to_march():
@@ -108,7 +134,6 @@ def test_southern_hemisphere_huglin_uses_october_to_march():
     huglin = entry(result, 2024, "huglin_hi")
     assert huglin["n_days"] == 6
     assert huglin["value"] == pytest.approx(45.0)
-    assert huglin["status"] == "ok"
 
 
 def test_southern_cold_night_index_uses_march():
@@ -184,8 +209,6 @@ def test_growing_season_and_diurnal_range():
     assert gsl["n_days"] == 2
     assert diurnal["value"] == pytest.approx(10.0)
     assert diurnal["n_days"] == 2
-    assert diurnal["missing_fraction"] == pytest.approx(0.0)
-    assert diurnal["status"] == "ok"
 
 
 def test_temperature_only_metrics_accept_missing_tmax():
@@ -209,11 +232,11 @@ def test_all_missing_window_marks_insufficient():
 
 
 def test_climatology_ignores_insufficient_years():
-    rows = [(f"2023-01-{day:02d}", 10.0, 20.0, 0.0) for day in range(1, 11)]
+    rows = _full_year(2023)
     rows += [(f"2024-01-{day:02d}", None, None, 0.0) for day in range(1, 11)]
     result = compute(rows, latitude=45.0, years=[2023, 2024])
     summary = result["climatology"]["gdd10"]
-    assert summary["mean"] == pytest.approx(50.0)
+    assert summary["mean"] == pytest.approx(1825.0)
     assert summary["n_years_used"] == 1
     assert summary["n_years_insufficient"] == 1
 

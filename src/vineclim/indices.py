@@ -7,6 +7,7 @@ explicit hemisphere handling and a missing-data threshold of 20 %.
 
 from __future__ import annotations
 
+import calendar
 import math
 from dataclasses import dataclass
 from typing import Any
@@ -205,6 +206,38 @@ def _month_window(year: int, months: set[int]) -> pd.Series:
     return pd.Series(sorted(months))
 
 
+def _days_in_month(year: int, month: int) -> int:
+    return pd.Period(f"{year:04d}-{month:02d}", freq="M").days_in_month
+
+
+def _window_days(year: int, metric: str, lat_hemisphere: str) -> int:
+    """Calendar days in a metric's evaluation window.
+
+    The window length is fixed by the calendar, not by how many rows the input
+    happens to contain, so a file with whole months missing still reports the
+    correct missing fraction.
+    """
+    south = lat_hemisphere == "south"
+    if metric == "huglin_hi":
+        if south:
+            months_back = (10, 11, 12)
+            return sum(_days_in_month(year - 1, month) for month in months_back) + sum(
+                _days_in_month(year, month) for month in (1, 2, 3)
+            )
+        return sum(_days_in_month(year, month) for month in (4, 5, 6, 7, 8, 9))
+    if metric == "cold_night_index":
+        return _days_in_month(year, 3 if south else 9)
+    if metric == "spring_frost_days":
+        if south:
+            return sum(_days_in_month(year, month) for month in (9, 10, 11))
+        return _days_in_month(year, 4) + _days_in_month(year, 5)
+    if metric == "autumn_frost_days":
+        if south:
+            return _days_in_month(year, 4) + _days_in_month(year, 5)
+        return _days_in_month(year, 10)
+    return 366 if calendar.isleap(year) else 365
+
+
 def _window_mask(dates: pd.Series, year: int, metric: str, lat_hemisphere: str) -> pd.Series:
     """Boolean mask for the evaluation window of one metric/year."""
     years = dates.dt.year
@@ -313,7 +346,13 @@ def _compute_for_frame(
             else:
                 used = valid
 
-            entry = _evaluate(values, valid, used, int(window.sum()), definition.kind)
+            entry = _evaluate(
+                values,
+                valid,
+                used,
+                _window_days(year, key, lat_hemisphere),
+                definition.kind,
+            )
             if suffix:
                 entry = {f"{name}{suffix}": item for name, item in entry.items()}
             yearly[key] = entry

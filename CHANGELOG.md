@@ -4,6 +4,17 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and the project uses [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Fixed
+
+- Missing-day fractions are computed against the calendar window instead of
+  the rows that happen to exist, so a file with whole months missing is now
+  flagged `insufficient_data` instead of passing as complete.
+- Years without a single row between the first and last date are evaluated
+  and reported as insufficient rather than silently skipped.
+- Non-UTF-8 input now exits with a readable message instead of a traceback.
+
 ## [0.1.0] - 2026-11-17
 
 ### Added

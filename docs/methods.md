@@ -101,7 +101,7 @@ diurnal_range_gs(year) = mean(Tmax − Tmin | Tmean ≥ 10 °C)
 
 ## 2. 缺测规则
 
-- 每个指标的评估窗口独立计算缺测比例：`n_missing / n_window`。
+- 每个指标的评估窗口独立计算缺测比例：`n_missing / n_window`，其中 `n_window` 是窗口的日历天数，与文件里恰好有多少行无关；整月缺失也会计入。
 - 缺测比例 **> 20 %** 时，该指标/年份标记为 `insufficient_data`；
   恰好 20 % 仍为 `ok`（阈值比较用严格大于）。
 - 缺测日不参与累计或平均，但保留在缺测计数与缺测比例中。

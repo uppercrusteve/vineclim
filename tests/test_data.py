@@ -77,6 +77,15 @@ def test_helpers_report_years_and_coverage(tmp_path: Path):
     assert coverage(frame) == ("2023-06-01", "2024-06-01")
 
 
+def test_available_years_fills_gap_years(tmp_path: Path):
+    path = write_csv(
+        tmp_path / "gap.csv",
+        [("2023-06-01", 1.0, 2.0, 0.0), ("2025-06-01", 1.0, 2.0, 0.0)],
+    )
+    frame = load_csv(path)
+    assert available_years(frame) == [2023, 2024, 2025]
+
+
 def test_extra_columns_are_dropped(tmp_path: Path):
     path = tmp_path / "extra.csv"
     path.write_text("date,tmin_c,tmax_c,precip_mm,note\n2024-01-01,1,2,0,x\n", encoding="utf-8")
