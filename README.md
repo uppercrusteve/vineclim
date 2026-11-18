@@ -163,7 +163,7 @@ ruff check .
 若在论文或报告中使用本工具，请引用（机器可读信息见 [CITATION.cff](CITATION.cff)）：
 
 ```bibtex
-@software{xiao_vineclim_2026,
+@software{uppercrusteve_vineclim_2026,
   author  = {uppercrusteve},
   title   = {vineclim: bioclimatic indices and reproducible reports for high-altitude vineyards},
   year    = {2026},
