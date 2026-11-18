@@ -4,7 +4,7 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and the project uses [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [0.1.0] - 2026-11-18
 
 ### Fixed
 
@@ -14,8 +14,6 @@ and the project uses [Semantic Versioning](https://semver.org/).
 - Years without a single row between the first and last date are evaluated
   and reported as insufficient rather than silently skipped.
 - Non-UTF-8 input now exits with a readable message instead of a traceback.
-
-## [0.1.0] - 2026-11-17
 
 ### Added
 
