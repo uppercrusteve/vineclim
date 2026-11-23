@@ -18,7 +18,7 @@
 
 需要 Python 3.10 或更新版本（CI 覆盖 3.11 / 3.12）。建议使用虚拟环境。
 
-Windows PowerShell：
+Windows PowerShell:
 
 ```powershell
 py -3.12 -m venv .venv
@@ -26,7 +26,7 @@ py -3.12 -m venv .venv
 pip install -e ".[dev]"
 ```
 
-macOS / Linux：
+macOS / Linux:
 
 ```bash
 python3 -m venv .venv
@@ -35,7 +35,7 @@ pip install -e ".[dev]"
 ```
 
 > PowerShell 若提示禁止运行脚本，可先执行
-> `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`。
+> `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`.
 
 ## 快速开始
 
@@ -112,7 +112,7 @@ insufficient_data 条目: 0/99
 每次运行写出：
 
 - `indices.json`：机器可读结果，含指标定义、数据性质、订正参数与免责声明；
-- `indices.csv`：`year,metric,value,value_corrected,n_days,n_missing,missing_fraction,status,status_corrected`；
+- `indices.csv`: `year,metric,value,value_corrected,n_days,n_missing,missing_fraction,status,status_corrected`;
 - `report.md`：中文 Markdown 报告，分列未订正 / 订正值与 `insufficient_data` 状态；
 - `annual-gdd.png`、`frost-calendar.png`、`climatology.png`：实际结果图（`--no-plots` 可关闭）。
 
