@@ -152,7 +152,7 @@ insufficient_data 条目: 0/99
 ## 测试
 
 ```bash
-pytest -q     # 59 个测试，135 条断言
+pytest -q     # 62 个测试，138 条断言
 ruff check .
 ```
 
